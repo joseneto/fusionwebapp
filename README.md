@@ -1,18 +1,43 @@
-fusionwebapp
+FusionWebApp
 ============
 
-Rapid application development project for java
+FusionwebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
+And the best part is that FusionWebApp is completely customizable, it is a maven project built upon the following frameworks:
 
-### Welcome to GitHub Pages.
-This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:
+x #####Jquery-EasyUi
+x #####Sitemesh
+x #####Spring
+x #####ActiveJdbc
+x #####JasperReport
+
+### Getting Started
+
+First, download Maven(http://maven.apache.org/download.cgi) and follow the installation instructions(http://maven.apache.org/download.cgi#Installation). After that, type the following in a terminal or in a command prompt:
 
 ```
-$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+$ mvn --version
 ```
 
-If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.
+Download the fusionwebapp and place in a folder of your choice, this will be your project folder. 
+
+```
+$ cd MyProjectFolder
+$ mvn install
+$ mvn package
+```
+
+Now your project can now be started!
+With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it
+
+###Configuring the Database
+FusionWebApp tem dois arquivos de configuração para o banco de dados, o primeiro se refere a migração de dados e é encontrado no pom.xml, se você deseja utilizar a migração de dados então é preciso alterar este arquivo e colocar as propriedades referentes ao seu banco de dados
+
+< <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jdbc.url>jdbc:mysql://localhost:3306/fusiondb?characterEncoding=utf-8</jdbc.url>
+        <jdbc.username>root</jdbc.username>
+        <jdbc.password>root</jdbc.password>
+    </properties> >
 
 ### Designer Templates
 We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
