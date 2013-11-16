@@ -4,15 +4,15 @@ FusionWebApp
 FusionwebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
 And the best part is that FusionWebApp is completely customizable, it is a maven project built upon the following frameworks:
 
-x #####Jquery-EasyUi
-x #####Sitemesh
-x #####Spring
-x #####ActiveJdbc
-x #####JasperReport
+#####Jquery-EasyUi
+#####Sitemesh
+#####Spring
+#####ActiveJdbc
+#####JasperReport
 
 ### Getting Started
 
-First, download Maven(http://maven.apache.org/download.cgi) and follow the installation instructions(http://maven.apache.org/download.cgi#Installation). After that, type the following in a terminal or in a command prompt:
+First, download Maven (http://maven.apache.org/download.cgi) and follow the installation instructions (http://maven.apache.org/download.cgi#Installation). After that, type the following in a terminal or in a command prompt:
 
 ```
 $ mvn --version
@@ -30,14 +30,14 @@ Now your project can now be started!
 With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it
 
 ###Configuring the Database
-FusionWebApp tem dois arquivos de configuração para o banco de dados, o primeiro se refere a migração de dados e é encontrado no pom.xml, se você deseja utilizar a migração de dados então é preciso alterar este arquivo e colocar as propriedades referentes ao seu banco de dados
+FusionWebApp has two configuration files to the database, the first refers to data migration and is found in *pom.xml*, if you want to use data migration then you need to change this file and put the properties pertaining to your database
 
-< <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jdbc.url>jdbc:mysql://localhost:3306/fusiondb?characterEncoding=utf-8</jdbc.url>
-        <jdbc.username>root</jdbc.username>
-        <jdbc.password>root</jdbc.password>
-    </properties> >
+    <properties>
+       <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+       <jdbc.url>jdbc:mysql://localhost:3306/mydb?characterEncoding=utf-8</jdbc.url>
+       <jdbc.username>yourdatabaseuser</jdbc.username>
+       <jdbc.password>yourdatabasepassword</jdbc.password>
+    </properties>
 
 ### Designer Templates
 We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.
