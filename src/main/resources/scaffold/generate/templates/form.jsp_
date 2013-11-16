@@ -1,0 +1,71 @@
+    <div id="dlg-{dmodel}" class="easyui-dialog" style="width:400px;height:280px;padding:10px 20px"
+            closed="true" buttons="#dlg-buttons-{dmodel}">
+        <div class="ftitle">{umodel} Information</div>
+        <form id="fm-{dmodel}" method="post" novalidate class="fm">
+                {genform}
+        </form>
+    </div>
+    <div id="dlg-buttons-{dmodel}">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-ok" onclick="save{umodel}()"><spring:message code='label.save'/></a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-cancel" onclick="javascript:$('#dlg-{dmodel}').dialog('close')"><spring:message code='label.cancel'/></a>
+    </div>
+    </div>
+    <script type="text/javascript">
+        var url;
+        function new{umodel}(){
+            $('#dlg-{dmodel}').dialog('open').dialog('setTitle',"<spring:message code='label.new'/> {umodel}");
+            $('#fm-{dmodel}').form('clear');
+            url = './{pdmodel}/save';
+        }
+        function edit{umodel}(){
+            var row = $('#dg-{dmodel}').datagrid('getSelected');
+            if (row){
+                $('#dlg-{dmodel}').dialog('open').dialog('setTitle',"<spring:message code='label.new'/> {umodel}");
+                $('#fm-{dmodel}').form('load',row);
+                url = './{pdmodel}/update/'+row.id;
+            }
+        }
+        function save{umodel}(){
+            $('#fm-{dmodel}').form('submit',{
+                url: url,
+                onSubmit: function(){
+                    return $(this).form('validate');
+                },
+                success: function(result){
+            
+                    var result = eval('('+result+')');
+                    if (result.errorMsg){
+                        $.messager.show({
+                            title: 'Error',
+                            msg: result.errorMsg
+                        });
+                    } else {
+                        $('#dlg-{dmodel}').dialog('close');        // close the dialog
+                        $('#dg-{dmodel}').datagrid('reload');    // reload the user data
+                    }
+                }
+            });
+        }
+        function destroy{umodel}(){
+            var row = $('#dg-{dmodel}').datagrid('getSelected');
+            if (row){
+                $.messager.confirm("<spring:message code='label.confirm'/>","<spring:message code='label.message.destroy' arguments='{dmodel}'/>",function(r){
+                    if (r){
+                        $.post('./{pdmodel}/destroy/'+row.id,function(result){
+                            if (result.success){
+                                $('#dg-{dmodel}').datagrid('reload');    // reload the user data
+                            } else {
+                                $.messager.show({    // show error message
+                                    title: 'Error',
+                                    msg: result.errorMsg
+                                });
+                            }
+                        },'json');
+                    }
+                });
+            }
+        }
+    </script>
+  
+
+

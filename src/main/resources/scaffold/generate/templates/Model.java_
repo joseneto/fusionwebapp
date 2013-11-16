@@ -1,0 +1,15 @@
+package {pkg}.models;
+
+import org.javalite.activejdbc.Model;
+{tblpackage}
+
+/**
+ *
+ * @author Auto Generate FusionWebApp Model
+ */
+{tblname}
+public class {umodel} extends Model{
+    
+    {mconverts}
+    
+}

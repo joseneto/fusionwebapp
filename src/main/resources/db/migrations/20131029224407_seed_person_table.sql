@@ -1,0 +1,2 @@
+insert into people(first_name, last_name, created_at, updated_at) values ('Gybson', 'Angels', now(), now());
+insert into people(first_name, last_name, created_at, updated_at) values ('Kallyn', 'Sunders', now(), now());

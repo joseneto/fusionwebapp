@@ -1,0 +1,32 @@
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
+<div data-options="region:'north',border:false">
+    <div style="border:1px solid #ddd">
+          
+        <a href="{pdmodel}/report" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-print'">PDF <spring:message code="label.report" /></a>
+    </div>
+</div>
+<div data-options="region:'center',border:false" >
+    <table id="dg-{dmodel}" title="{umodel}" class="easyui-datagrid" 
+           url="./{pdmodel}/list"
+           toolbar="#toolbar-{dmodel}" pagination="true"
+           rownumbers="true" fitColumns="true" singleSelect="true">
+        <thead>
+            <tr>
+                <th field="id" width="50">Id</th>
+                {gentable}
+            </tr>
+        </thead>
+    </table>
+    <div id="toolbar-{dmodel}">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="new{umodel}()"><spring:message code='label.new'/></a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="edit{umodel}()"><spring:message code='label.edit'/></a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroy{umodel}()"><spring:message code='label.destroy'/></a>
+    </div>
+
+    <%@include file="form.jsp"%> 
+</div>
+
+ 
+
+
+
