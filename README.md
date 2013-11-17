@@ -7,7 +7,7 @@ And the best part is that FusionWebApp is completely customizable, it is a maven
 + Jquery EasyUI
 + Sitemesh
 + Spring
-+ ActiveJdbc
++ ActiveJDBC
 + JasperReport
 
 ![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png)
@@ -33,7 +33,29 @@ $ mvn package
 Now your project can now be started!
 With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it
 
-##Configuring the Database
+##Database
+FusionWebApp use the ActiveJdbc, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
+
+```
+List<person> people = Person.where("name = 'John'");
+Person aJohn = people.get(0);
+String johnsLastName = aJohn.get("last_name");
+```
+
+Creating new records:
+
+```
+Person p = new Person();
+p.set("name", "Marilyn");
+p.set("last_name", "Monroe");
+p.set("dob", "1935-12-06");
+p.saveIt();
+```
+
+You can learn more about ActiveJDBC here: http://javalt.org/p/activejdbc
+
+
+###Configure Database
 FusionWebApp has two configuration files to the database, the first refers to data migration and is found in **pom.xml**, if you want to use data migration then you need to change this file and put the properties pertaining to your database
 
     <properties>
@@ -94,7 +116,7 @@ You can get more information about the CarbonFive migration here: https://code.g
 
 ##Scaffold
 
-With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized. To generate a CRUD type the following in a terminal or in a command prompt:
+With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized, FusionWebApp comes with a crud (Person - people), simply run the migrete database to test. To generate a CRUD type the following in a terminal or in a command prompt:
 
 ```
 $ cd MyProjectFolder
