@@ -4,11 +4,13 @@ FusionWebApp
 FusionwebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
 And the best part is that FusionWebApp is completely customizable, it is a maven project built upon the following frameworks:
 
-+ Jquery-EasyUi
++ Jquery EasyUI
 + Sitemesh
 + Spring
 + ActiveJdbc
 + JasperReport
+
+It is simple, requires minimal configuration, is fast, is scalable, view layer using lightweight requests RESTful/json, standardized on the MVC. Is Java!
 
 ## Getting Started
 
@@ -41,7 +43,7 @@ FusionWebApp has two configuration files to the database, the first refers to da
 
 ###How to Migrate
 
-To create a new migration, execute this command:
+FusionWebApp use the CarbonFive Plugin. To create a new migration, execute this command:
 
 ```
 $ cd MyProjectFolder
@@ -52,7 +54,6 @@ this action would create an empty file in this localization:
 
 ```
 $ MyProjectFolder\src\main\resources\db\migrations\20101112230703_create_people_table.sql
-
 ```
 After that, add a sql code to the file:
 
@@ -70,5 +71,5 @@ From the command line, you can run the migration plugin like this:
 $ mvn db-migration:migrate
 ```
 
-You can get more information about the carbon five migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
+You can get more information about the CarbonFive migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
 
