@@ -171,20 +171,19 @@ You can learn more about Spring MVC here: http://docs.spring.io/spring/docs/3.2.
 
 ###Scaffold
 
-With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized, FusionWebApp comes with a crud (Person - people), simply run the migrete database to test. To generate a CRUD type the following in a terminal or in a command prompt:
+With FusionWebApp is possible to generate a complete CRUD code with *model, controller, service layer and view layer*. All code generated is easily customized, FusionWebApp comes with a crud (Person - people) built, simply run the migrate database to test it. 
+To generate a CRUD type the following in a terminal or in a command prompt:
 
 ```
 $ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person"
 ```
 
-Simple as that! Our Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.
+Simple as that! The Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.
 
 ![FusionWebApp Crud2](http://imageshack.com/a/img577/1306/sc0c.png)
 
-It is also possible to send as parameter the desired table, or to inform that the generator does not pluralize the model.
-
--t for table
+Others arguments can be passed, to choose the desired table:
 
 ```
 $ cd MyProjectFolder
@@ -198,10 +197,10 @@ $ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -np"
 ```
 
-The code generator is free and is in the package scaffold.generate, feel free to customize it on your need.
+The code generator is free and opensource, it is in the package scaffold.generate, feel free to customize whenever you need.
 
 
 ##Why use FusionWebApp
 
-There are several frameworks with the same proposal of agile development, which brings FusionWebApp novelty is freedom within your project, because it is built on everything that is being used more.
+There are several frameworks with the same proposal of agile/rapid development, which brings FusionWebApp novelty is freedom within your project, because it is built on everything that is being used more.
 Here you increase your good skills, change that is needed and has complete mastery of your project. FusionWebApp does the hard work that the entire setup is based on best practices for development and also productivity of Ruby on Rails.
