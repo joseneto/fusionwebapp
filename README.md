@@ -130,7 +130,9 @@ With FusionWebApp is possible to develop several separate environments, by defau
 ```
 
 ###View
-We chose to use jquery easyUI in our view layer, Jquery is widely using in many web projects, has become something standard is simple and fast. We also used to manage Sitemesh layouts, we have a file **application.jsp** and all our other views are rendered inside that, if you ever met Ruby on Rails should be familiar with this concept.
+We chose to use jquery EasyUI in our view layer, Jquery is widely using in many web projects, has become something standard is simple and fast. We also used to manage Sitemesh layouts, we have a file **application.jsp** and all our other views are rendered inside that, if you ever met Ruby on Rails should be familiar with this concept.
+
+You can learn more about Jquery EasyUI here: http://www.jeasyui.com/
 
 ###Controller
 
@@ -138,7 +140,7 @@ We use spring-mvc for managing requests, using standard RESTful: /list, /save/, 
 
 ```
 @RequestMapping(value = "/save", method = RequestMethod.POST)
-public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> params, ModelMap model) {
+public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> params) {
  
   return personService.save(params);
  
