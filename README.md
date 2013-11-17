@@ -190,7 +190,7 @@ $ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -t=mytable"
 ```
 
-or -np to no pluralize
+or `-np` to no pluralize
 
 ```
 $ cd MyProjectFolder
