@@ -7,7 +7,7 @@ And the best part is that FusionWebApp is completely customizable, it is a maven
 + Jquery EasyUI
 + Sitemesh
 + Spring
-+ ActiveJdbc
++ ActiveJDBC
 + JasperReport
 
 ![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png)
@@ -33,7 +33,28 @@ $ mvn package
 Now your project can now be started!
 With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it
 
-##Configuring the Database
+##Database
+FusionWebApp use the ActiveJdbc, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
+
+```
+List<person> people = Person.where("name = 'John'");
+Person aJohn = people.get(0);
+String johnsLastName = aJohn.get("last_name");
+```
+
+Creating new records:
+
+```
+Person p = new Person();
+p.set("name", "Marilyn");
+p.set("last_name", "Monroe");
+p.set("dob", "1935-12-06");
+p.saveIt();
+```
+
+You can learn more about ActiveJDBC here: http://javalt.org/p/activejdbc
+
+###Configure Database
 FusionWebApp has two configuration files to the database, the first refers to data migration and is found in **pom.xml**, if you want to use data migration then you need to change this file and put the properties pertaining to your database
 
     <properties>
@@ -59,6 +80,8 @@ jdbc.password=root
 #Locale Config
 app.locale=en
 ```
+
+In addition to the configuration database is possible to change the default package that generates code scaffold and internationalization.
 
 ###How to Migrate
 
@@ -92,9 +115,41 @@ $ mvn db-migration:migrate
 
 You can get more information about the CarbonFive migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
 
-##Scaffold
+##Environment
 
-With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized. To generate a CRUD type the following in a terminal or in a command prompt:
+With FusionWebApp is possible to develop several separate environments, by default we have two environments, prod.properties dev.properties and you can choose between them in the file **spring-mvc-servlet.xml**:
+
+```
+<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+        <list>
+            <value>classpath:dev.properties</value>
+        </list>
+    </property>
+</bean>
+```
+
+###View
+We chose to use jquery easyUI in our view layer, Jquery is widely using in many web projects, has become something standard is simple and fast. We also used to manage Sitemesh layouts, we have a file **application.jsp** and all our other views are rendered inside that, if you ever met Ruby on Rails should be familiar with this concept.
+
+###Controller
+
+We use spring-mvc for managing requests, using standard RESTful: /list, /save/, /update/{id}, /destroy/{id}.
+
+```
+@RequestMapping(value = "/save", method = RequestMethod.POST)
+public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> params, ModelMap model) {
+ 
+  return personService.save(params);
+ 
+}
+```
+
+You can learn more about Spring MVC here: http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html
+
+###Scaffold
+
+With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized, FusionWebApp comes with a crud (Person - people), simply run the migrete database to test. To generate a CRUD type the following in a terminal or in a command prompt:
 
 ```
 $ cd MyProjectFolder
@@ -120,6 +175,9 @@ or -np to no pluralize
 $ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -np"
 ```
+
+The code generator is free and is in the package scaffold.generate, feel free to customize it on your need.
+
 
 ##Why use FusionWebApp
 
