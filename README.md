@@ -31,7 +31,7 @@ $ mvn package
 ```
 
 Now your project can now be started!
-With these commands you should have generated a WAR file. This is all you need to know to generate your project, now let's learn how to configure it
+With these commands you should have generated a WAR file. This is all you need to know to generate your project, now let's learn how FusionWebApp works.
 
 ##Database
 FusionWebApp use the ActiveJdbc, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
@@ -135,7 +135,7 @@ resources/
     
 ```
 
-With FusionWebApp is possible have many separate environments, by default we have two environments, prod.properties dev.properties, you can choose between them in the file **spring-mvc-servlet.xml**:
+With FusionWebApp is possible have many separate environments, by default we have two environments, prod.properties and dev.properties, you can choose between them in the file **spring-mvc-servlet.xml**:
 
 ```
 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -150,13 +150,13 @@ With FusionWebApp is possible have many separate environments, by default we hav
 ###View
 We chose to use Jquery EasyUI in our view layer, Jquery is commonly usable in many web projects, have a large library and a strong opensource community. Your project will be ready for Ajax, rest/json, HTML5 and much more!
 
-We also used Sitemesh to manage the layouts, there is a single file **application.jsp** and all our other views are rendered inside that file.
+We also used Sitemesh to manage the layouts, there is a single file **application.jsp** and all others views are rendered inside that file.
 
 You can learn more about Jquery EasyUI here: http://www.jeasyui.com/
 
 ###Controller
 
-We use spring-mvc for managing requests, using standard RESTful: /list, /save/, /update/{id}, /destroy/{id}.
+We choose Spring why it help structure whole applications, productive manner, pulling together best-of-breed single-tier frameworks to create a coherent architecture, using standard RESTful: /list, /save/, /update/{id}, /destroy/{id}.
 
 ```
 @RequestMapping(value = "/save", method = RequestMethod.POST)
