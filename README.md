@@ -1,8 +1,8 @@
 FusionWebApp
 ============
 
-FusionwebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
-And the best part is that FusionWebApp is completely customizable, it is a maven project built upon the following frameworks:
+FusionWebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
+Totally Customizable, it is a maven project built upon the following frameworks:
 
 + Jquery EasyUI
 + Sitemesh
@@ -12,7 +12,7 @@ And the best part is that FusionWebApp is completely customizable, it is a maven
 
 ![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png)
 
-It is simple, requires minimal configuration, is fast, is scalable, view layer using lightweight requests RESTful/json, standardized on the MVC. Is Java!
+Simple, fast, scalable. view layer using lightweight requests RESTful/json. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
 
 ## Getting Started
 
@@ -22,7 +22,7 @@ First, download Maven (http://maven.apache.org/download.cgi) and follow the inst
 $ mvn --version
 ```
 
-Download the fusionwebapp and place in a folder of your choice, this will be your project folder. 
+Download the FusionWebApp and place in a folder of your choice, this will be your project folder. 
 
 ```
 $ cd MyProjectFolder
@@ -31,7 +31,7 @@ $ mvn package
 ```
 
 Now your project can now be started!
-With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it
+With these commands you should have generated a WAR file. This is all you need to know to generate your project, now let's learn how to configure it
 
 ##Database
 FusionWebApp use the ActiveJdbc, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
@@ -55,7 +55,7 @@ p.saveIt();
 You can learn more about ActiveJDBC here: http://javalt.org/p/activejdbc
 
 ###Configure Database
-FusionWebApp has two configuration files to the database, the first refers to data migration and is found in **pom.xml**, if you want to use data migration then you need to change this file and put the properties pertaining to your database
+FusionWebApp has two configuration, the first refers to data migration and is found in the maven **pom.xml**, if you want to use data migration then you need to change this file and put the properties pertaining to your database
 
     <properties>
        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -65,7 +65,7 @@ FusionWebApp has two configuration files to the database, the first refers to da
     </properties>
     
     
-The other configuration file is a type of properties, the main settings of the database and the application are there.
+The other configuration file is a the main settings of the database and the application, for deafult is the **dev.properties**.
 
 ```
 #Generate Config
@@ -73,15 +73,15 @@ app.package=com.fusion.app
 
 #Datasource Config
 jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/fusiondb?characterEncoding=utf-8
-jdbc.username=root
-jdbc.password=root
+jdbc.url=jdbc:mysql://localhost:3306/mydb?characterEncoding=utf-8
+jdbc.username=yourdatabaseuser
+jdbc.password=yourdatabasepassword
 
 #Locale Config
 app.locale=en
 ```
 
-In addition to the configuration database is possible to change the default package that generates code scaffold and internationalization.
+In addition to the configuration database is possible to change the default package usable to generates code (scaffold) and internationalization locale.
 
 ###How to Migrate
 
@@ -117,7 +117,25 @@ You can get more information about the CarbonFive migration here: https://code.g
 
 ##Environment
 
-With FusionWebApp is possible to develop several separate environments, by default we have two environments, prod.properties dev.properties and you can choose between them in the file **spring-mvc-servlet.xml**:
+```
+com.fusion.app
+    controllers
+    models
+    services
+
+WEB-INF/
+    view/layouts/application.jsp
+    spring-mvc-servlet.xml
+            
+resources/            
+    db.migrations   
+    dev.properties
+    prod.properties
+    messages_en.properties
+    
+```
+
+With FusionWebApp is possible have many separate environments, by default we have two environments, prod.properties dev.properties and you can choose between them in the file **spring-mvc-servlet.xml**:
 
 ```
 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -130,7 +148,9 @@ With FusionWebApp is possible to develop several separate environments, by defau
 ```
 
 ###View
-We chose to use jquery EasyUI in our view layer, Jquery is widely using in many web projects, has become something standard is simple and fast. We also used to manage Sitemesh layouts, we have a file **application.jsp** and all our other views are rendered inside that, if you ever met Ruby on Rails should be familiar with this concept.
+We chose to use Jquery EasyUI in our view layer, Jquery common usable in many web projects, have a large library and a strong opensource community. Your project will be ready for Ajax, rest/json and much more!
+
+We also used Sitemesh to manage the layouts, we have a single file **application.jsp** and all our other views are rendered inside that file, if you ever met Ruby on Rails should be familiar with this concept.
 
 You can learn more about Jquery EasyUI here: http://www.jeasyui.com/
 
