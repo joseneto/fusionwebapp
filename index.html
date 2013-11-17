@@ -36,43 +36,138 @@
         <span class="blc"></span><span class="trc"></span>
         </div>
         <article class="markdown-body">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="fusionwebapp" class="anchor" href="#fusionwebapp"><span class="octicon octicon-link"></span></a>FusionWebApp</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>FusionwebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
+And the best part is that FusionWebApp is completely customizable, it is a maven project built upon the following frameworks:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<ul>
+<li>Jquery EasyUI</li>
+<li>Sitemesh</li>
+<li>Spring</li>
+<li>ActiveJdbc</li>
+<li>JasperReport</li>
+</ul><p><img src="http://imageshack.com/a/img191/8933/74hs.png" alt="FusionWebApp Crud"></p>
+
+<p>It is simple, requires minimal configuration, is fast, is scalable, view layer using lightweight requests RESTful/json, standardized on the MVC. Is Java!</p>
+
+<h2>
+<a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<p>First, download Maven (<a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>) and follow the installation instructions (<a href="http://maven.apache.org/download.cgi#Installation">http://maven.apache.org/download.cgi#Installation</a>). After that, type the following in a terminal or in a command prompt:</p>
+
+<pre><code>$ mvn --version
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Download the fusionwebapp and place in a folder of your choice, this will be your project folder. </p>
+
+<pre><code>$ cd MyProjectFolder
+$ mvn install
+$ mvn package
+</code></pre>
+
+<p>Now your project can now be started!
+With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it</p>
+
+<h2>
+<a name="configuring-the-database" class="anchor" href="#configuring-the-database"><span class="octicon octicon-link"></span></a>Configuring the Database</h2>
+
+<p>FusionWebApp has two configuration files to the database, the first refers to data migration and is found in <strong>pom.xml</strong>, if you want to use data migration then you need to change this file and put the properties pertaining to your database</p>
+
+<pre><code>&lt;properties&gt;
+   &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+   &lt;jdbc.url&gt;jdbc:mysql://localhost:3306/mydb?characterEncoding=utf-8&lt;/jdbc.url&gt;
+   &lt;jdbc.username&gt;yourdatabaseuser&lt;/jdbc.username&gt;
+   &lt;jdbc.password&gt;yourdatabasepassword&lt;/jdbc.password&gt;
+&lt;/properties&gt;
+</code></pre>
+
+<p>The other configuration file is a type of properties, the main settings of the database and the application are there.</p>
+
+<pre><code>#Generate Config
+app.package=com.fusion.app
+
+#Datasource Config
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/fusiondb?characterEncoding=utf-8
+jdbc.username=root
+jdbc.password=root
+
+#Locale Config
+app.locale=en
+</code></pre>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="how-to-migrate" class="anchor" href="#how-to-migrate"><span class="octicon octicon-link"></span></a>How to Migrate</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p>FusionWebApp use the CarbonFive Plugin. To create a new migration, execute this command:</p>
 
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<pre><code>$ cd MyProjectFolder
+$ mvn db-migration:new -Dname=create_people_table
+</code></pre>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p>this action would create an empty file in this localization:</p>
 
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<pre><code>$ MyProjectFolder\src\main\resources\db\migrations\20101112230703_create_people_table.sql
+</code></pre>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<p>After that, add a sql code to the file:</p>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<pre><code>CREATE TABLE people (
+  id  int(11) DEFAULT NULL auto_increment PRIMARY KEY,
+  first_name VARCHAR(128),
+  last_name VARCHAR(128),
+  created_at DATETIME,
+  updated_at DATETIME
+);
+</code></pre>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>From the command line, you can run the migration plugin like this:</p>
+
+<pre><code>$ mvn db-migration:migrate
+</code></pre>
+
+<p>You can get more information about the CarbonFive migration here: <a href="https://code.google.com/p/c5-db-migration/wiki/MavenPlugin">https://code.google.com/p/c5-db-migration/wiki/MavenPlugin</a></p>
+
+<h2>
+<a name="scaffold" class="anchor" href="#scaffold"><span class="octicon octicon-link"></span></a>Scaffold</h2>
+
+<p>With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized. To generate a CRUD type the following in a terminal or in a command prompt:</p>
+
+<pre><code>$ cd MyProjectFolder
+$ mvn exec:java -Dexec.args="-m=Person"
+</code></pre>
+
+<p>Simple as that! Our Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.</p>
+
+<p><img src="http://imageshack.com/a/img577/1306/sc0c.png" alt="FusionWebApp Crud2"></p>
+
+<p>It is also possible to send as parameter the desired table, or to inform that the generator does not pluralize the model.</p>
+
+<p>-t for table</p>
+
+<pre><code>$ cd MyProjectFolder
+$ mvn exec:java -Dexec.args="-m=Person -t=mytable"
+</code></pre>
+
+<p>or -np to no pluralize</p>
+
+<pre><code>$ cd MyProjectFolder
+$ mvn exec:java -Dexec.args="-m=Person -np"
+</code></pre>
+
+<h2>
+<a name="why-use-fusionwebapp" class="anchor" href="#why-use-fusionwebapp"><span class="octicon octicon-link"></span></a>Why use FusionWebApp</h2>
+
+<p>There are several frameworks with the same proposal of agile development, which brings FusionWebApp novelty is freedom within your project, because it is built on everything that is being used more.
+Here you increase your good skills, change that is needed and has complete mastery of your project. FusionWebApp does the hard work that the entire setup is based on best practices for development and also productivity of Ruby on Rails.</p>
         </article>
       </div>
     </div>
     <footer>
       <div class="owner">
-      <p><a href="https://github.com/joseneto" class="avatar"><img src="https://0.gravatar.com/avatar/e9e85cc2307f64e02307ad91050af078?d=https%3A%2F%2Fidenticons.github.com%2Fab9c0680dc39b901e20909261973c0b4.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/joseneto">joseneto</a> maintains <a href="https://github.com/joseneto/fusionwebapp">Fusionwebapp</a></p>
+      <p><a href="https://github.com/joseneto" class="avatar"><img src="https://2.gravatar.com/avatar/e9e85cc2307f64e02307ad91050af078?d=https%3A%2F%2Fidenticons.github.com%2Fab9c0680dc39b901e20909261973c0b4.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/joseneto">joseneto</a> maintains <a href="https://github.com/joseneto/fusionwebapp">Fusionwebapp</a></p>
 
 
       </div>
