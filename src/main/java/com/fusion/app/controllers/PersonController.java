@@ -35,28 +35,28 @@ public class PersonController {
     }
     
     @RequestMapping(value = "/list", method = RequestMethod.POST)
-    public @ResponseBody  Map<String, Object> list(@RequestParam Map<String,String> params, ModelMap model) {
+    public @ResponseBody  Map<String, Object> list(@RequestParam Map<String,String> params) {
      
         return  personService.paginate(Integer.valueOf(params.get("page")), Integer.valueOf(params.get("rows")));
 
     }
     
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> params, ModelMap model) {
+    public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> params) {
      
       return personService.save(params);
      
     }
     
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
-    public @ResponseBody Map<String,String> update(@PathVariable String id, @RequestParam Map<String,String> params, ModelMap model) {
+    public @ResponseBody Map<String,String> update(@PathVariable String id, @RequestParam Map<String,String> params) {
       params.put("id", id);
       return personService.update(params);
       
     }
      
     @RequestMapping(value = "/destroy/{id}", method = RequestMethod.POST)
-    public @ResponseBody Map<String,String> destroy(@PathVariable String id, @RequestParam Map<String,String> params, ModelMap model) {
+    public @ResponseBody Map<String,String> destroy(@PathVariable String id, @RequestParam Map<String,String> params) {
        params.put("id", id); 
       return personService.destroy(params);
     }
