@@ -1,56 +1,58 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>FusionWebApp by joseneto</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="javascripts/script.js"></script>
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/joseneto/fusionwebapp">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/joseneto/fusionwebapp/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/joseneto/fusionwebapp/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
 
-  <title>Fusionwebapp</title>
-  <meta name="description" content="Rapid application development project for java">
+    <div class="wrapper">
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Fusionwebapp</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">Rapid application development project for java</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/joseneto/fusionwebapp/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/joseneto/fusionwebapp/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/joseneto/fusionwebapp" class="code">View Fusionwebapp on GitHub</a>
+      <section>
+        <div id="title">
+          <h1>FusionWebApp</h1>
+          <p>Rapid Development of Enterprise Web Applications with Java!</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/joseneto">joseneto</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
         </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h1>
+
+        <h1>
 <a name="fusionwebapp" class="anchor" href="#fusionwebapp"><span class="octicon octicon-link"></span></a>FusionWebApp</h1>
 
-<p>FusionwebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
-And the best part is that FusionWebApp is completely customizable, it is a maven project built upon the following frameworks:</p>
+<p>FusionWebApp is a set of Java Frameworks for Rapid Development of Enterprise Web Applications. It is a project fully configured and ready for you to start your own web applications.
+Totally Customizable, it is a maven project built upon the following frameworks:</p>
 
 <ul>
 <li>Jquery EasyUI</li>
 <li>Sitemesh</li>
 <li>Spring</li>
-<li>ActiveJdbc</li>
+<li>ActiveJDBC</li>
 <li>JasperReport</li>
 </ul><p><img src="http://imageshack.com/a/img191/8933/74hs.png" alt="FusionWebApp Crud"></p>
 
-<p>It is simple, requires minimal configuration, is fast, is scalable, view layer using lightweight requests RESTful/json, standardized on the MVC. Is Java!</p>
+<p>Simple, fast, scalable. view layer using lightweight RESTful/json requests. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!</p>
 
 <h2>
 <a name="getting-started" class="anchor" href="#getting-started"><span class="octicon octicon-link"></span></a>Getting Started</h2>
@@ -60,7 +62,7 @@ And the best part is that FusionWebApp is completely customizable, it is a maven
 <pre><code>$ mvn --version
 </code></pre>
 
-<p>Download the fusionwebapp and place in a folder of your choice, this will be your project folder. </p>
+<p>Download the FusionWebApp and place in a folder of your choice, this will be your project folder. </p>
 
 <pre><code>$ cd MyProjectFolder
 $ mvn install
@@ -68,12 +70,33 @@ $ mvn package
 </code></pre>
 
 <p>Now your project can now be started!
-With these commands you should have generated a WAR file relating to your project. This is all you need to know to generate your project, now let's learn how to configure it</p>
+With these commands you should have generated a WAR file. This is all you need to know to generate your project, now let's learn how FusionWebApp works.</p>
 
 <h2>
-<a name="configuring-the-database" class="anchor" href="#configuring-the-database"><span class="octicon octicon-link"></span></a>Configuring the Database</h2>
+<a name="database" class="anchor" href="#database"><span class="octicon octicon-link"></span></a>Database</h2>
 
-<p>FusionWebApp has two configuration files to the database, the first refers to data migration and is found in <strong>pom.xml</strong>, if you want to use data migration then you need to change this file and put the properties pertaining to your database</p>
+<p>FusionWebApp use the ActiveJdbc, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:</p>
+
+<pre><code>List&lt;person&gt; people = Person.where("name = 'John'");
+Person aJohn = people.get(0);
+String johnsLastName = aJohn.get("last_name");
+</code></pre>
+
+<p>Creating new records:</p>
+
+<pre><code>Person p = new Person();
+p.set("name", "Marilyn");
+p.set("last_name", "Monroe");
+p.set("dob", "1935-12-06");
+p.saveIt();
+</code></pre>
+
+<p>You can learn more about ActiveJDBC here: <a href="http://javalt.org/p/activejdbc">http://javalt.org/p/activejdbc</a></p>
+
+<h3>
+<a name="configure-database" class="anchor" href="#configure-database"><span class="octicon octicon-link"></span></a>Configure Database</h3>
+
+<p>FusionWebApp has two configuration, the first refers to data migration and is found in the maven <strong>pom.xml</strong>, if you want to use data migration then you need to change this file and put the properties pertaining to your database</p>
 
 <pre><code>&lt;properties&gt;
    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
@@ -83,20 +106,22 @@ With these commands you should have generated a WAR file relating to your projec
 &lt;/properties&gt;
 </code></pre>
 
-<p>The other configuration file is a type of properties, the main settings of the database and the application are there.</p>
+<p>The other configuration file is the main settings of the database and the application, for deafult is the <strong>dev.properties</strong>.</p>
 
 <pre><code>#Generate Config
 app.package=com.fusion.app
 
 #Datasource Config
 jdbc.driver=com.mysql.jdbc.Driver
-jdbc.url=jdbc:mysql://localhost:3306/fusiondb?characterEncoding=utf-8
-jdbc.username=root
-jdbc.password=root
+jdbc.url=jdbc:mysql://localhost:3306/mydb?characterEncoding=utf-8
+jdbc.username=yourdatabaseuser
+jdbc.password=yourdatabasepassword
 
 #Locale Config
 app.locale=en
 </code></pre>
+
+<p>In addition to the configuration database is possible to change the default package usable to generates code (scaffold) and internationalization locale.</p>
 
 <h3>
 <a name="how-to-migrate" class="anchor" href="#how-to-migrate"><span class="octicon octicon-link"></span></a>How to Migrate</h3>
@@ -131,57 +156,98 @@ $ mvn db-migration:new -Dname=create_people_table
 <p>You can get more information about the CarbonFive migration here: <a href="https://code.google.com/p/c5-db-migration/wiki/MavenPlugin">https://code.google.com/p/c5-db-migration/wiki/MavenPlugin</a></p>
 
 <h2>
-<a name="scaffold" class="anchor" href="#scaffold"><span class="octicon octicon-link"></span></a>Scaffold</h2>
+<a name="environment" class="anchor" href="#environment"><span class="octicon octicon-link"></span></a>Environment</h2>
 
-<p>With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized. To generate a CRUD type the following in a terminal or in a command prompt:</p>
+<pre><code>com.fusion.app
+    controllers
+    models
+    services
+
+WEB-INF/
+    view/layouts/application.jsp
+    spring-mvc-servlet.xml
+
+resources/            
+    db.migrations   
+    dev.properties
+    prod.properties
+    messages_en.properties
+
+</code></pre>
+
+<p>With FusionWebApp is possible have many separate environments, by default we have two environments, prod.properties and dev.properties, you can choose between them in the file <strong>spring-mvc-servlet.xml</strong>:</p>
+
+<pre><code>&lt;bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"&gt;
+    &lt;property name="locations"&gt;
+        &lt;list&gt;
+            &lt;value&gt;classpath:dev.properties&lt;/value&gt;
+        &lt;/list&gt;
+    &lt;/property&gt;
+&lt;/bean&gt;
+</code></pre>
+
+<h3>
+<a name="view" class="anchor" href="#view"><span class="octicon octicon-link"></span></a>View</h3>
+
+<p>We chose to use Jquery EasyUI in our view layer, Jquery is commonly usable in many web projects, have a large library and a strong opensource community. Your project will be ready for Ajax, rest/json, HTML5 and much more!</p>
+
+<p>We also used Sitemesh to manage the layouts, there is a single file <strong>application.jsp</strong> and all others views are rendered inside that file.</p>
+
+<p>You can learn more about Jquery EasyUI here: <a href="http://www.jeasyui.com/">http://www.jeasyui.com/</a></p>
+
+<h3>
+<a name="controller" class="anchor" href="#controller"><span class="octicon octicon-link"></span></a>Controller</h3>
+
+<p>We choose Spring why it help structure whole applications, productive manner, pulling together best-of-breed single-tier frameworks to create a coherent architecture, using standard RESTful: /list, /save/, /update/{id}, /destroy/{id}.</p>
+
+<pre><code>@RequestMapping(value = "/save", method = RequestMethod.POST)
+public @ResponseBody Map&lt;String,String&gt; save(@RequestParam Map&lt;String,String&gt; params) {
+
+  return personService.save(params);
+
+}
+</code></pre>
+
+<p>You can learn more about Spring MVC here: <a href="http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html">http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html</a></p>
+
+<h3>
+<a name="scaffold" class="anchor" href="#scaffold"><span class="octicon octicon-link"></span></a>Scaffold</h3>
+
+<p>With FusionWebApp is possible to generate a complete CRUD code with <em>model, controller, service layer and view layer</em>. All code generated is easily customized, FusionWebApp comes with a crud (Person - people) built, simply run the migrate database to test it. 
+To generate a CRUD type the following in a terminal or in a command prompt:</p>
 
 <pre><code>$ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person"
 </code></pre>
 
-<p>Simple as that! Our Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.</p>
+<p>Simple as that! The Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.</p>
 
 <p><img src="http://imageshack.com/a/img577/1306/sc0c.png" alt="FusionWebApp Crud2"></p>
 
-<p>It is also possible to send as parameter the desired table, or to inform that the generator does not pluralize the model.</p>
-
-<p>-t for table</p>
+<p>Others arguments can be passed, to choose the desired table:</p>
 
 <pre><code>$ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -t=mytable"
 </code></pre>
 
-<p>or -np to no pluralize</p>
+<p>or <code>-np</code> to no pluralize</p>
 
 <pre><code>$ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -np"
 </code></pre>
 
+<p>The code generator is free and opensource, it is in the package scaffold.generate, feel free to customize whenever you need.</p>
+
 <h2>
 <a name="why-use-fusionwebapp" class="anchor" href="#why-use-fusionwebapp"><span class="octicon octicon-link"></span></a>Why use FusionWebApp</h2>
 
-<p>There are several frameworks with the same proposal of agile development, which brings FusionWebApp novelty is freedom within your project, because it is built on everything that is being used more.
-Here you increase your good skills, change that is needed and has complete mastery of your project. FusionWebApp does the hard work that the entire setup is based on best practices for development and also productivity of Ruby on Rails.</p>
-        </article>
-      </div>
+<p>There are several frameworks with the same proposal for rapid development, but FusionWebApp, uses what already exists and works in the market.
+That way you can learn more and more, if you develop a project using FusionWebApp, your experience will be with Jquery, Spring, ActiveJDBC, Maven, JaspeReport and more.
+Create incredible web applications and be ready for the market at the same time.</p>
+      </section>
+
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/joseneto" class="avatar"><img src="https://2.gravatar.com/avatar/e9e85cc2307f64e02307ad91050af078?d=https%3A%2F%2Fidenticons.github.com%2Fab9c0680dc39b901e20909261973c0b4.png&amp;r=x&amp;s=60" width="48" height="48"/></a> <a href="https://github.com/joseneto">joseneto</a> maintains <a href="https://github.com/joseneto/fusionwebapp">Fusionwebapp</a></p>
-
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="https://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/joseneto/fusionwebapp/tarball/master" class="tar">tar</a><a href="https://github.com/joseneto/fusionwebapp/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-  
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
 </html>
