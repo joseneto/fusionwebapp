@@ -34,7 +34,7 @@ Now your project can now be started!
 With these commands you should have generated a WAR file. This is all you need to know to generate your project, now let's learn how FusionWebApp works.
 
 ##Database
-FusionWebApp use the ActiveJdbc, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
+FusionWebApp use the ActiveJDBC, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
 
 ```
 List<person> people = Person.where("name = 'John'");
