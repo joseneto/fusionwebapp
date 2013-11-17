@@ -42,6 +42,23 @@ FusionWebApp has two configuration files to the database, the first refers to da
        <jdbc.username>yourdatabaseuser</jdbc.username>
        <jdbc.password>yourdatabasepassword</jdbc.password>
     </properties>
+    
+    
+The other configuration file is a type of properties, the main settings of the database and the application are there.
+
+```
+#Generate Config
+app.package=com.fusion.app
+
+#Datasource Config
+jdbc.driver=com.mysql.jdbc.Driver
+jdbc.url=jdbc:mysql://localhost:3306/fusiondb?characterEncoding=utf-8
+jdbc.username=root
+jdbc.password=root
+
+#Locale Config
+app.locale=en
+```
 
 ###How to Migrate
 
@@ -75,3 +92,6 @@ $ mvn db-migration:migrate
 
 You can get more information about the CarbonFive migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
 
+##Scaffold
+
+With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized.
