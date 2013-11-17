@@ -120,3 +120,8 @@ or -np to no pluralize
 $ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -np"
 ```
+
+##Why use FusionWebApp
+
+There are several frameworks with the same proposal of agile development, which brings FusionWebApp novelty is freedom within your project, because it is built on everything that is being used more.
+Here you increase your good skills, change that is needed and has complete mastery of your project. FusionWebApp does the hard work that the entire setup is based on best practices for development and also productivity of Ruby on Rails.
