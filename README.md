@@ -12,7 +12,7 @@ Totally Customizable, it is a maven project built upon the following frameworks:
 
 ![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png)
 
-Simple, fast, scalable. view layer using lightweight RESTful/json requests. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
+Simple, fast, scalable. View layer using lightweight RESTful/json requests. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
 
 ## Getting Started
 
