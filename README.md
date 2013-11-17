@@ -94,4 +94,29 @@ You can get more information about the CarbonFive migration here: https://code.g
 
 ##Scaffold
 
-With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized.
+With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized. To generate a CRUD type the following in a terminal or in a command prompt:
+
+```
+$ cd MyProjectFolder
+$ mvn exec:java -Dexec.args="-m=Person"
+```
+
+Simple as that! Our Generator read you table metadata, in this case people and create to you a complete crud.
+
+![FusionWebApp Crud2](http://imageshack.com/a/img577/1306/sc0c.png)
+
+It is also possible to send as parameter the desired table, or to inform that the generator does not pluralize the model.
+
+-t for table
+
+```
+$ cd MyProjectFolder
+$ mvn exec:java -Dexec.args="-m=Person -t=mytable"
+```
+
+or -np to no pluralize
+
+```
+$ cd MyProjectFolder
+$ mvn exec:java -Dexec.args="-m=Person -np"
+```
