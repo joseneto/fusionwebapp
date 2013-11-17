@@ -54,7 +54,6 @@ p.saveIt();
 
 You can learn more about ActiveJDBC here: http://javalt.org/p/activejdbc
 
-
 ###Configure Database
 FusionWebApp has two configuration files to the database, the first refers to data migration and is found in **pom.xml**, if you want to use data migration then you need to change this file and put the properties pertaining to your database
 
@@ -116,7 +115,6 @@ $ mvn db-migration:migrate
 
 You can get more information about the CarbonFive migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
 
-
 ##Environment
 
 With FusionWebApp is possible to develop several separate environments, by default we have two environments, prod.properties dev.properties and you can choose between them in the file **spring-mvc-servlet.xml**:
@@ -130,6 +128,9 @@ With FusionWebApp is possible to develop several separate environments, by defau
     </property>
 </bean>
 ```
+
+###View
+We chose to use jquery easyUI in our view layer, Jquery is widely using in many web projects, has become something standard is simple and fast. We also used to manage Sitemesh layouts, we have a file **application.jsp** and all our other views are rendered inside that, if you ever met Ruby on Rails should be familiar with this concept.
 
 ###Controller
 
