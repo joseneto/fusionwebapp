@@ -12,7 +12,7 @@ Totally Customizable, it is a maven project built upon the following frameworks:
 
 ![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png)
 
-Simple, fast, scalable. view layer using lightweight requests RESTful/json. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
+Simple, fast, scalable. view layer using lightweight RESTful/json requests. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
 
 ## Getting Started
 
@@ -65,7 +65,7 @@ FusionWebApp has two configuration, the first refers to data migration and is fo
     </properties>
     
     
-The other configuration file is a the main settings of the database and the application, for deafult is the **dev.properties**.
+The other configuration file is the main settings of the database and the application, for deafult is the **dev.properties**.
 
 ```
 #Generate Config
@@ -135,7 +135,7 @@ resources/
     
 ```
 
-With FusionWebApp is possible have many separate environments, by default we have two environments, prod.properties dev.properties and you can choose between them in the file **spring-mvc-servlet.xml**:
+With FusionWebApp is possible have many separate environments, by default we have two environments, prod.properties dev.properties, you can choose between them in the file **spring-mvc-servlet.xml**:
 
 ```
 <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -148,9 +148,9 @@ With FusionWebApp is possible have many separate environments, by default we hav
 ```
 
 ###View
-We chose to use Jquery EasyUI in our view layer, Jquery common usable in many web projects, have a large library and a strong opensource community. Your project will be ready for Ajax, rest/json and much more!
+We chose to use Jquery EasyUI in our view layer, Jquery is commonly usable in many web projects, have a large library and a strong opensource community. Your project will be ready for Ajax, rest/json, HTML5 and much more!
 
-We also used Sitemesh to manage the layouts, we have a single file **application.jsp** and all our other views are rendered inside that file, if you ever met Ruby on Rails should be familiar with this concept.
+We also used Sitemesh to manage the layouts, there is a single file **application.jsp** and all our other views are rendered inside that file.
 
 You can learn more about Jquery EasyUI here: http://www.jeasyui.com/
 
