@@ -10,6 +10,8 @@ And the best part is that FusionWebApp is completely customizable, it is a maven
 + ActiveJdbc
 + JasperReport
 
+![FusionWebApp Crud](http://imageshack.com/i/5b74hsp)
+
 It is simple, requires minimal configuration, is fast, is scalable, view layer using lightweight requests RESTful/json, standardized on the MVC. Is Java!
 
 ## Getting Started
