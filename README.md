@@ -82,6 +82,8 @@ jdbc.password=root
 app.locale=en
 ```
 
+In addition to the configuration database is possible to change the default package that generates code scaffold and internationalization.
+
 ###How to Migrate
 
 FusionWebApp use the CarbonFive Plugin. To create a new migration, execute this command:
@@ -114,6 +116,36 @@ $ mvn db-migration:migrate
 
 You can get more information about the CarbonFive migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
 
+
+###Environment
+
+With FusionWebApp is possible to develop several separate environments, by default we have two environments, prod.properties dev.properties and you can choose between them in the file **spring-mvc-servlet.xml**:
+
+```
+<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+    <property name="locations">
+        <list>
+            <value>classpath:dev.properties</value>
+        </list>
+    </property>
+</bean>
+```
+
+##Controller
+
+We use spring-mvc for managing requests, using standard RESTful: /list, /save/, /update/{id}, /destroy/{id}.
+
+```
+@RequestMapping(value = "/save", method = RequestMethod.POST)
+public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> params, ModelMap model) {
+ 
+  return personService.save(params);
+ 
+}
+```
+
+You can learn more about Spring MVC here: http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html
+
 ##Scaffold
 
 With FusionWebApp is possible to generate a CRUD code complete with Model, Controller, Service and View. This feature streamlines the development of various parts of a project, all code generated is easily customized, FusionWebApp comes with a crud (Person - people), simply run the migrete database to test. To generate a CRUD type the following in a terminal or in a command prompt:
@@ -142,6 +174,9 @@ or -np to no pluralize
 $ cd MyProjectFolder
 $ mvn exec:java -Dexec.args="-m=Person -np"
 ```
+
+The code generator is free and is in the package scaffold.generate, feel free to customize it on your need.
+
 
 ##Why use FusionWebApp
 
