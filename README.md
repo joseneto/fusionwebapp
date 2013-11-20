@@ -181,7 +181,7 @@ $ mvn exec:java -Dexec.args="-m=Person"
 
 Simple as that! The Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.
 
-![FusionWebApp Crud2](http://imageshack.com/a/img577/1306/sc0c.png "Click to see full size image")
+[![FusionWebApp Crud2](http://imageshack.com/a/img577/1306/sc0c.png "Click to see full size image")](http://imageshack.com/a/img577/1306/sc0c.png)
 
 Others arguments can be passed, to choose the desired table:
 
