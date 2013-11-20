@@ -10,7 +10,7 @@ Totally Customizable, it is a maven project built upon the following frameworks:
 + ActiveJDBC
 + JasperReport
 
-![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png "Optional title")
+![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png "Click to see full size image")
 
 Simple, fast, scalable. View layer using lightweight RESTful/json requests. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
 
@@ -181,7 +181,7 @@ $ mvn exec:java -Dexec.args="-m=Person"
 
 Simple as that! The Generator read you table metadata, in this case people and create to you a complete crud, go to url /people and see it!.
 
-![FusionWebApp Crud2](http://imageshack.com/a/img577/1306/sc0c.png)
+![FusionWebApp Crud2](http://imageshack.com/a/img577/1306/sc0c.png "Click to see full size image")
 
 Others arguments can be passed, to choose the desired table:
 
