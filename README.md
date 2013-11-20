@@ -10,7 +10,7 @@ Totally Customizable, it is a maven project built upon the following frameworks:
 + ActiveJDBC
 + JasperReport
 
-![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png "Click to see full size image")(http://imageshack.com/a/img191/8933/74hs.png)
+[![FusionWebApp Crud](http://imageshack.com/a/img191/8933/74hs.png "Click to see full size image")](http://imageshack.com/a/img191/8933/74hs.png)
 
 Simple, fast, scalable. View layer using lightweight RESTful/json requests. Builds applications that conform to the MVC (Model-View-Controller) architectural paradigm. Start your Java project now!
 
