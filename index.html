@@ -4,6 +4,7 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
@@ -226,6 +227,19 @@ $ mvn exec:java -Dexec.args="-m=Person -np"
 </code></pre>
 
 <p>The code generator is free and opensource, it is in the package scaffold.generate, feel free to customize whenever you need.</p>
+
+<h2>
+<a name="setting-up-your-preferred-ide" class="anchor" href="#setting-up-your-preferred-ide"><span class="octicon octicon-link"></span></a>Setting up your preferred IDE</h2>
+
+<p>Sometimes develop with an ide can bring a big productivity gain, it is possible to easily add support for Eclipse or Netbeans.</p>
+
+<p>For Eclipse:</p>
+
+<pre><code>$ cd MyProjectFolder
+$ mvn eclipse:eclipse
+</code></pre>
+
+<p>Now import your project to Eclipse. <strong>Netbeans</strong> just opens Maven projects. You don't need to convert them.</p>
 
 <h2>
 <a name="why-use-fusionwebapp" class="anchor" href="#why-use-fusionwebapp"><span class="octicon octicon-link"></span></a>Why use FusionWebApp</h2>
