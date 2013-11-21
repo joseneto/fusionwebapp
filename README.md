@@ -199,6 +199,15 @@ $ mvn exec:java -Dexec.args="-m=Person -np"
 
 The code generator is free and opensource, it is in the package scaffold.generate, feel free to customize whenever you need.
 
+##Setting up your preferred IDE
+Sometimes develop with an ide can bring a big productivity gain, it is possible to easily add support for Eclipse or Netbeans.
+
+For Eclipse:
+```
+$ cd MyProjectFolder
+$ mvn eclipse:eclipse
+```
+Now import your project to Eclipse. For *Netbeans* you just open the project!
 
 ##Why use FusionWebApp
 
