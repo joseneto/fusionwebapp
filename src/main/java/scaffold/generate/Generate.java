@@ -84,9 +84,13 @@ public class Generate {
         String dirTemplate = File.separator + "src"+File.separator+"main"+File.separator+"resources"+File.separator+"scaffold"+File.separator+"generate"+File.separator+"templates"+File.separator;
         String dirSource = File.separator + "src"+ File.separator +"main"+ File.separator +"java" + File.separator;
         String dirView = File.separator + "src" + File.separator + "main" + File.separator + "webapp" + File.separator + "WEB-INF" + File.separator + "views" + File.separator;
+        
+        
         try {
             util.readProperties(util.readSpringXML());
             String outFilePath = (System.getProperty("app.package").replace(".", File.separator) + File.separator);
+            String fDate = System.getProperty("app.format.date");
+            String fDateTime = System.getProperty("app.format.datetime");
             
             Base.open(System.getProperty("jdbc.driver"), System.getProperty("jdbc.url"), 
                     System.getProperty("jdbc.username"), System.getProperty("jdbc.password"));
@@ -155,12 +159,12 @@ public class Generate {
                                   modelBeforeContent.append("   if (getString(\""+ cname +"\").equals(\"true\")) {set(\""+ cname +"\", 1);} else {set(\""+ cname +"\", 0);}\n");
                                   break;
                               case (java.sql.Types.DATE):
-                                  formContent.append("<input name=\"" + cname + "\" class=\"easyui-datebox\" data-options=\"parser:parseDate\" type=\"text\">\n");
-                                   modelStaticContent.append("  convertTimestamp(\""+ cname +"\", \"dd/MM/yyyy\");\n");
+                                  formContent.append("<input name=\"" + cname + "\" class=\"easyui-datebox\" data-options=\"parser:parseDate,formatter:formatInputDate\" type=\"text\">\n");
+                                   modelStaticContent.append("  convertTimestamp(\""+ cname +"\", \""+fDate+"\");\n");
                                   break;
                               case (java.sql.Types.TIMESTAMP):
-                                  formContent.append("<input name=\"" + cname + "\" class=\"easyui-datetimebox\" data-options=\"parser:parseDate\" type=\"text\">\n");
-                                  modelStaticContent.append("   convertTimestamp(\""+ cname +"\", \"dd/MM/yyyy HH:mm:ss\");\n");
+                                  formContent.append("<input name=\"" + cname + "\" class=\"easyui-datetimebox\" data-options=\"parser:parseDateTime,formatter:formatInputDateTime\" type=\"text\">\n");
+                                  modelStaticContent.append("   convertTimestamp(\""+ cname +"\", \""+fDateTime+"\");\n");
                                   break;
                               case (java.sql.Types.TIME):
                                   formContent.append("<input name=\"" + cname + "\" class=\"easyui-timespinner\" type=\"text\">\n");

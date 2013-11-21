@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="./styles/application.css" type="text/css" media="screen" />
         <script src="./js/jquery.min.js" type="text/javascript"></script>
         <script src="./js/jquery.easyui.min.js" type="text/javascript"></script>
+        <script src="./js/moment.min.js" type="text/javascript"></script>
         <script src="./js/application.js" type="text/javascript"></script>
 
         <title>FusionWebApp</title>
