@@ -79,6 +79,9 @@ jdbc.password=yourdatabasepassword
 
 #Locale Config
 app.locale=en
+#If you chage date format please change in application.js also
+app.format.date=dd/MM/yyyy
+app.format.datetime=dd/MM/yyyy HH:mm:ss
 ```
 
 In addition to the configuration database is possible to change the default package usable to generates code (scaffold) and internationalization locale.
