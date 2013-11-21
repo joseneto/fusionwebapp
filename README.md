@@ -207,7 +207,7 @@ For Eclipse:
 $ cd MyProjectFolder
 $ mvn eclipse:eclipse
 ```
-Now import your project to Eclipse. For *Netbeans* you just open the project!
+Now import your project to Eclipse. **Netbeans** just opens Maven projects. You don't need to convert them.
 
 ##Why use FusionWebApp
 
