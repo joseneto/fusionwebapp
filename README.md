@@ -27,6 +27,7 @@ Download the FusionWebApp and place in a folder of your choice, this will be you
 ```
 $ cd MyProjectFolder
 $ mvn install
+$ mvn compile
 $ mvn package
 ```
 
