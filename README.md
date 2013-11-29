@@ -160,7 +160,7 @@ You can learn more about Jquery EasyUI here: http://www.jeasyui.com/
 
 ###Controller
 
-We choose Spring why it help structure whole applications, productive manner, pulling together best-of-breed single-tier frameworks to create a coherent architecture, using standard RESTful: /list, /save/, /update/{id}, /destroy/{id}.
+We choose Spring why it help structure whole applications, productive manner, pulling together best-of-breed single-tier frameworks to create a coherent architecture, using standard RESTful: /list, /save/, /edit{id}, /update/{id}, /destroy/{id}.
 
 ```
 @RequestMapping(value = "/save", method = RequestMethod.POST)
