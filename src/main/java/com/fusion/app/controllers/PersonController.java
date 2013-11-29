@@ -48,6 +48,13 @@ public class PersonController {
      
     }
     
+    @RequestMapping(value = "/edit/{id}", method = RequestMethod.GET)
+    public @ResponseBody Map<String,Object> edit(@PathVariable String id, @RequestParam Map<String,String> params) {
+      params.put("id", id);
+      return personService.edit(params);
+      
+    }
+
     @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
     public @ResponseBody Map<String,String> update(@PathVariable String id, @RequestParam Map<String,String> params) {
       params.put("id", id);

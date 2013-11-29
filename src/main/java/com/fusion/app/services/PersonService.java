@@ -1,6 +1,7 @@
 package com.fusion.app.services;
 
 import com.fusion.app.models.Person;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -31,14 +32,14 @@ public class PersonService extends ApplicationService {
             Base.open(dataSource);
             long total = Person.count();
             Paginator pages = new Paginator(Person.class, rows, "").orderBy("created_at asc");
-            List<Person> people = pages.getPage(page);
+            List<Person> listPage = pages.getPage(page);
 
-            List<Map> lista = new ArrayList<Map>();
+            List<Map> list = new ArrayList<Map>();
 
-            for (Person person : people) {
-                lista.add(person.toMap());
+            for (Person person : listPage) {
+                list.add(person.toMap());
             }
-            restReturn.put("rows", lista);
+            restReturn.put("rows", list);
             restReturn.put("total", total);
 
         } catch (Exception e) {
@@ -61,7 +62,6 @@ public class PersonService extends ApplicationService {
   
             Person person = new Person();
             person.fromMap(params);
-         
             if (person.save()) {
                 message.put("success", "true");
             } else {
@@ -77,6 +77,22 @@ public class PersonService extends ApplicationService {
         }
 
         return message;
+    }
+
+    @Override
+    public Map<String, Object> edit(Map<String, String> params) {
+        Person person = new Person();
+        try {
+            Base.open(dataSource);
+            person = Person.findFirst("id = ?", params.get("id"));
+        } catch (Exception e) {
+           e.printStackTrace();
+         
+        } finally {
+            Base.close();
+        }
+
+        return person.toMap();
     }
 
     @Override
@@ -131,7 +147,7 @@ public class PersonService extends ApplicationService {
         try {
             Base.open(dataSource);
             List<Map> parameters = Person.findAll().toMaps();
-            reportImpl(parameters, context ,response, "views/people/report.jrxml", "people_list");
+            reportImpl(parameters, context, response, "views"+ File.separator + "people" + File.separator + "report.jrxml", "people_list");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

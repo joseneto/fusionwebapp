@@ -21,7 +21,7 @@
             var row = $('#dg-{dmodel}').datagrid('getSelected');
             if (row){
                 $('#dlg-{dmodel}').dialog('open').dialog('setTitle',"<spring:message code='label.new'/> {umodel}");
-                $('#fm-{dmodel}').form('load',row);
+                $('#fm-{dmodel}').form('load','./{pdmodel}/edit/'+row.id);
                 url = './{pdmodel}/update/'+row.id;
             }
         }

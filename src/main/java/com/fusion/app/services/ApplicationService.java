@@ -19,7 +19,6 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import org.javalite.activejdbc.Errors;
-import org.javalite.activejdbc.Model;
 
 /**
  *
@@ -30,6 +29,7 @@ public abstract class ApplicationService {
     public abstract Map<String, Object> paginate(int page, int rows);
     public abstract Map<String,String> save(Map<String,String> params);
     public abstract Map<String,String> update(Map<String,String> params);
+    public abstract Map<String,Object> edit(Map<String,String> params);
     public abstract Map<String,String> destroy(Map<String,String> params);
     
     protected String handledModelErrors(Errors errors){

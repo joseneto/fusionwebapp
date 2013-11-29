@@ -2,15 +2,13 @@
             closed="true" buttons="#dlg-buttons-person">
         <div class="ftitle">Person Information</div>
         <form id="fm-person" method="post" novalidate class="fm">
-            <div class="fitem">
-                <label>First Name:</label>
-                <input name="first_name" class="easyui-validatebox" required="true">
-            </div>
-            <div class="fitem">
-                <label>Last Name:</label>
-                <input name="last_name" class="easyui-validatebox" required="true">
-            </div>
-          
+                <div class="fitem">
+<label>First_name:</label>
+<input name="first_name" type="text">
+</div><div class="fitem">
+<label>Last_name:</label>
+<input name="last_name" type="text">
+</div>
         </form>
     </div>
     <div id="dlg-buttons-person">
@@ -28,8 +26,8 @@
         function editPerson(){
             var row = $('#dg-person').datagrid('getSelected');
             if (row){
-                $('#dlg-person').dialog('open').dialog('setTitle',"<spring:message code='label.edit'/> Person");
-                $('#fm-person').form('load',row);
+                $('#dlg-person').dialog('open').dialog('setTitle',"<spring:message code='label.new'/> Person");
+                $('#fm-person').form('load','./people/edit/'+row.id);
                 url = './people/update/'+row.id;
             }
         }
@@ -57,7 +55,7 @@
         function destroyPerson(){
             var row = $('#dg-person').datagrid('getSelected');
             if (row){
-                $.messager.confirm("<spring:message code='label.confirm'/>","<spring:message code='label.message.destroy' arguments='Person'/>",function(r){
+                $.messager.confirm("<spring:message code='label.confirm'/>","<spring:message code='label.message.destroy' arguments='person'/>",function(r){
                     if (r){
                         $.post('./people/destroy/'+row.id,function(result){
                             if (result.success){
@@ -75,5 +73,4 @@
         }
     </script>
   
-
 

@@ -80,6 +80,22 @@ public class {umodel}Service extends ApplicationService {
     }
 
     @Override
+    public Map<String, Object> edit(Map<String, String> params) {
+        {umodel} {dmodel} = new {umodel}();
+        try {
+            Base.open(dataSource);
+            {dmodel} = {umodel}.findFirst("id = ?", params.get("id"));
+        } catch (Exception e) {
+           e.printStackTrace();
+         
+        } finally {
+            Base.close();
+        }
+
+        return {dmodel}.toMap();
+    }
+
+    @Override
     public Map<String, String> update(Map<String, String> params) {
         Map message = new HashMap<String, String>();
         try {
