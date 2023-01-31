@@ -34,7 +34,7 @@ $ mvn package
 Now your project can now be started!
 With these commands you should have generated a WAR file. This is all you need to know to generate your project, now let's learn how FusionWebApp works.
 
-##Database
+## Database
 FusionWebApp use the ActiveJDBC, what is a lightweight and fast Java ORM, its easy query with ActiveJDBC:
 
 ```
@@ -55,7 +55,7 @@ p.saveIt();
 
 You can learn more about ActiveJDBC here: http://javalt.org/p/activejdbc
 
-###Configure Database
+### Configure Database
 FusionWebApp has two configuration, the first refers to data migration and is found in the maven **pom.xml**, if you want to use data migration then you need to change this file and put the properties pertaining to your database
 
     <properties>
@@ -69,16 +69,16 @@ FusionWebApp has two configuration, the first refers to data migration and is fo
 The other configuration file is the main settings of the database and the application, for deafult is the **dev.properties**.
 
 ```
-#Generate Config
+# Generate Config
 app.package=com.fusion.app
 
-#Datasource Config
+# Datasource Config
 jdbc.driver=com.mysql.jdbc.Driver
 jdbc.url=jdbc:mysql://localhost:3306/mydb?characterEncoding=utf-8
 jdbc.username=yourdatabaseuser
 jdbc.password=yourdatabasepassword
 
-#Locale Config
+# Locale Config
 app.locale=en
 #If you chage date format please change in application.js also
 app.format.date=dd/MM/yyyy
@@ -87,7 +87,7 @@ app.format.datetime=dd/MM/yyyy HH:mm:ss
 
 In addition to the configuration database is possible to change the default package usable to generates code (scaffold) and internationalization locale.
 
-###How to Migrate
+### How to Migrate
 
 FusionWebApp use the CarbonFive Plugin. To create a new migration, execute this command:
 
@@ -119,7 +119,7 @@ $ mvn db-migration:migrate
 
 You can get more information about the CarbonFive migration here: https://code.google.com/p/c5-db-migration/wiki/MavenPlugin
 
-##Environment
+## Environment
 
 ```
 com.fusion.app
@@ -151,14 +151,14 @@ With FusionWebApp is possible have many separate environments, by default we hav
 </bean>
 ```
 
-###View
+### View
 We chose to use Jquery EasyUI in our view layer, Jquery is commonly usable in many web projects, have a large library and a strong opensource community. Your project will be ready for Ajax, rest/json, HTML5 and much more!
 
 We also used Sitemesh to manage the layouts, there is a single file **application.jsp** and all others views are rendered inside that file.
 
 You can learn more about Jquery EasyUI here: http://www.jeasyui.com/
 
-###Controller
+### Controller
 
 We choose Spring why it help structure whole applications, productive manner, pulling together best-of-breed single-tier frameworks to create a coherent architecture, using standard RESTful: /list, /save/, /edit{id}, /update/{id}, /destroy/{id}.
 
@@ -173,7 +173,7 @@ public @ResponseBody Map<String,String> save(@RequestParam Map<String,String> pa
 
 You can learn more about Spring MVC here: http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html/mvc.html
 
-###Scaffold
+### Scaffold
 
 With FusionWebApp is possible to generate a complete CRUD code with *model, controller, service layer and view layer*. All code generated is easily customized, FusionWebApp comes with a crud (Person - people) built, simply run the migrate database to test it. 
 To generate a CRUD type the following in a terminal or in a command prompt:
@@ -203,7 +203,7 @@ $ mvn exec:java -Dexec.args="-m=Person -np"
 
 The code generator is free and opensource, it is in the package scaffold.generate, feel free to customize whenever you need.
 
-##Setting up your preferred IDE
+## Setting up your preferred IDE
 Sometimes develop with an ide can bring a big productivity gain, it is possible to easily add support for Eclipse or Netbeans.
 
 For Eclipse:
@@ -213,7 +213,7 @@ $ mvn eclipse:eclipse
 ```
 Now import your project to Eclipse. **Netbeans** just opens Maven projects. You don't need to convert them.
 
-##Why use FusionWebApp
+## Why use FusionWebApp
 
 There are several frameworks with the same proposal for rapid development, but FusionWebApp, uses what already exists and works in the market.
 That way you can learn more and more, if you develop a project using FusionWebApp, your experience will be with Jquery, Spring, ActiveJDBC, Maven, JaspeReport and more.
